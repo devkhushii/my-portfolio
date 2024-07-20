@@ -6,6 +6,11 @@ This static webpage is designed to present my professional background, including
 
 - HTML : for structuring  the webpage
 - CSS : for styling (I used very basics of css)
+- web3forms (website) used for form validation
 
 ### Sample video of webpage
-https://github.com/devkhushii/my-portfolio/assets/128570886/89e0486d-650c-41d8-9c6e-6b0169f9f4bd
+
+
+https://github.com/user-attachments/assets/d21b28b9-18af-4374-b1da-cfde44dd2ee0
+
+
