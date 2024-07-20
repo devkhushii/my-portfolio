@@ -15,36 +15,113 @@
         background-color: rgb(133, 67, 133);
         color: white;
     }
-    .head {
-        display:flex;
-        justify-content: space-around;
+  
+    .contact-container{
+        height: 100vh;
+        display: flex;
         align-items: center;
-        background-color: rgb(116, 63, 116);
-        height:80px;
-      
+        justify-content: space-evenly;
     }
-    .myself {
-        display:flex;
-        justify-content: space-around;
+
+    .contact-left{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+      }
+
+      .contact-left-title h2{
+        font-weight: 600;
+        color: white;
+        font-size: 40px;
+        margin-bottom: 5px;
+      }
+     
+      .contact-left-title hr{
+        border: none;
+        width: 120px;
+        height: 5px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      } 
+
+      .contact-inputs{
+        width: 400px;
+        height: 50px;
+        border: none;
+        padding-left: 25px;
+        font-weight: 500;
+        color: rgb(121, 50, 121);
+        border-radius: 50px;
+      }
+
+     .contact-left textarea{
+        height: 140px;
+        padding-top: 15px;
+        border-radius: 20px;
+     }
+
+     .contact-inputs:focus{
+        border: 2px solid rgb(212, 144, 144);
+     }
+
+     .contact-inputs::placeholder{
+        color: rgb(129, 14, 94);
+     }
+
+     .contact-left button{
+        display: flex;
         align-items: center;
-        margin:20px;
-        font-size: 1rem;
-    }
+        padding: 15px 30px;
+        font-size: 16px;
+        color: #ffff;
+        gap: 10px;
+        border: none;
+        border-radius: 50px;
+        background: linear-gradient(270deg,rgb(175, 92, 175),rgb(180, 134, 180));
+        cursor: pointer;
+     }
+ contact-right img{
+    width: 600px;
+ }
+
+
+
 </style>
 <body>
-    <header>
-        <div class="head">
-        <h2>Contact Me</h2>
-        </div>
-    </header>
+   
     <main>
-        <div class="myself">
-           <pre>
-            Email : ranikhushi2005@gmail.com
-            Phone number : xxxxx4752
-            Linkedin : <a href="https://www.linkedin.com/in/khushi-rani"> khushi-rani</a>
-           </pre>
-        </div>
+        
+           <div class="contact-container">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left" id="myForm">
+                 <div class="contact-left-title">
+                    <h2>Contact Me</h2>
+                    <hr>
+                 </div>
+                 <input type="hidden" name="access_key" value="c50f72cf-4ce4-4a49-acca-7538ad6f1976">
+                 <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+                 
+                 <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+                
+                 <textarea name="message" placeholder="Your message" class="contact-inputs" required></textarea>
+                 
+                 <button type="submit">Submit</button>
+                
+            </form>
+            <div class="contact-right">
+                <img src="contactimg.png">
+            </div>
+           </div>
+        
     </main>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            let input = document.querySelectorAll("contact-inputs");
+            if (input.value === '') {
+              event.preventDefault();
+              alert('Input cannot be empty!');
+            }
+          });
+    </script>
 </body>
 </html>
